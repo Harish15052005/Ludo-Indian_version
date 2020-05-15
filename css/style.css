@@ -1,0 +1,304 @@
+*
+{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container
+{
+	height:100vh;
+	width:100%;
+	position: relative;
+}
+.board
+{
+	height: 450px;
+	width: 450px;
+	background:wheat;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	display: grid;
+	grid-template-rows: repeat(5,1fr);
+	grid-template-columns: repeat(5,1fr);
+}
+.box
+{
+	border:2px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	color:red;
+	font-size: 32px;
+}
+.box3:before,
+.box11:before,
+.box13:before,
+.box15:before,
+.box23:before
+{
+	content:'';
+	position:absolute;
+	height: 142%;
+	width: 3%;
+	top:0;
+	left:-2px;
+	background: black;
+	transform-origin: top;
+	transform: rotate(-45deg);
+	border-radius:20%;
+}
+.box3:after,
+.box11:after,
+.box13:after,
+.box15:after,
+.box23:after
+{
+	content:'';
+	position:absolute;
+	height: 142%;
+	width: 3%;
+	top:0;
+	right:-2px;
+	background: black;
+	transform-origin: top;
+	transform: rotate(45deg);
+	border-radius:20%;
+}
+.box4:before,
+.box22:before
+{
+	content: '';
+	position: absolute;
+	height: 70%;
+	width: 5%;
+	background:black;
+	border-radius:40px;
+}
+.box4:after,
+.box22:after
+{
+	content: '';
+	position: absolute;
+	height: 30%;
+	width: 30%;
+	background: black;
+	top:60%;
+	clip-path: polygon(0 0 , 100% 0 , 50% 100%);
+}
+.box22:after
+{
+	top:10%;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.box6:before,
+.box20:before
+{
+	content: '';
+	position: absolute;
+	width: 70%;
+	height: 5%;
+	background: black;
+	border-radius: 50px;
+}
+.box6:after,
+.box20:after
+{
+	content: '';
+	position: absolute;
+	height: 30%;
+	width: 30%;
+	background: black;
+	left:60%;
+	clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+.box20:after
+{
+	left:10%;
+	clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+.goti
+{
+	position: absolute;
+	height:65%;
+	width:65%;
+	z-index: 5;
+}
+.gotired
+{
+	background: #D50000;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%,
+	68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%,
+	2% 35%, 39% 35%);
+
+}
+.gotiyellow
+{
+	background: #FFC400;
+	clip-path: polygon(0 30%, 30% 29%, 31% 0,
+	67% 0, 67% 28%, 100% 28%, 100% 75%,
+	69% 75%, 69% 100%, 30% 100%, 30% 76%, 0 77%);
+}
+.gotiblue
+{
+	background: #2962FF;
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.gotigreen
+{
+	background: #32cd32;
+	border-radius: 15px;
+}
+.red,
+.yellow,
+.blue,
+.green
+{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:25%;
+	height: 45%;
+	flex-direction: column;
+}
+.red
+{
+	top:0;
+	left:0;
+	transform: scale(0);
+}
+.yellow
+{
+	bottom:0;
+	right:0;
+	transform: scale(0);
+}
+.blue
+{
+	bottom:0;
+	left:0;
+	transform: scale(0);
+}
+.green
+{
+	top:0;
+	right:0;
+	transform: scale(0);
+}
+.red input,
+.yellow input,
+.blue input,
+.green input
+{
+	height: 70px;
+	width:70px;
+	text-align: center;
+	font-size: 3em;
+	outline: none;
+}
+.red button,
+.yellow button,
+.blue button,
+.green button
+{
+	height: 50px;
+	width: 120px;
+	font-size: 2em;
+	letter-spacing:5px;
+	font-family: consolas;
+	cursor: pointer;
+}
+.red button
+{
+	background: transparent;
+	color: #F44336;
+	border: 2px solid #F44336;
+	transition:.3s linear;
+}
+.red button:hover
+{
+	background: #F44336;
+	color: white;
+}
+.yellow button
+{
+	background: transparent;
+	color: #FFC400;
+	border: 2px solid #FFC400;
+	transition:.3s linear;
+}
+.yellow button:hover
+{
+	background: #FFC400;
+	color: white;
+}
+.blue button
+{
+	background: transparent;
+	color: #2962FF;
+	border: 2px solid #2962FF;
+	transition:.3s linear;
+}
+.blue button:hover
+{
+	background: #2962FF;
+	color: white;
+}
+.green button
+{
+	background: transparent;
+	color: #32cd32;
+	border: 2px solid #32cd32;
+	transition:.3s linear;
+}
+.green button:hover
+{
+	background: #32cd32;
+	color: white;
+}
+.startGame
+{
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100vh;
+	width: 100%;
+	background: #222;
+	display: flex;
+	justify-content: center;  
+	align-items: center;
+}
+.startGame p
+{
+	color: #32cd32;
+	font-size: 2em;
+	letter-spacing: 8px;
+	font-family: consolas;
+	padding:15px 30px; 
+	border: 2px solid #32cd32;
+	border-radius: 35px;
+	cursor: pointer;
+	transform: 1s linear;
+}
+.startGame p:hover
+{
+	animation: colorchange 1s linear infinite;
+	background: #32cd32;
+	color:black;
+	font-weight: bolder;
+	box-shadow: 0px 0px 50px #32cd32;
+}
+@keyframes colorchange
+{
+	0%
+	{
+		filter: hue-rotate(0deg);
+	}
+	100%
+	{
+		filter: hue-rotate(360deg);
+	}
+}
