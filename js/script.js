@@ -1,5 +1,12 @@
 //start variables
 var startGame = document.querySelector('.startGame');
+var container = document.querySelector('.container');
+
+// winnig variables
+var redw = document.querySelector('.redw');
+var yelloww = document.querySelector('.yelloww');
+var bluew = document.querySelector('.bluew');
+var greenw = document.querySelector('.greenw');
 
 //  goti variables
 var redgoti = document.getElementById('gotired');
@@ -207,14 +214,28 @@ function moveredgoti(){
 	if (pnr > 24) {
 		pnr = 23;
 	};
+	//winning function for red;
+	if (pnr == 24) {
+		setTimeout(function(){
+			container.style.display = "none";
+			redw.style.height = '100vh';
+		},2000);
+	}
+	if (redinput.value == 4) {
+    green.style.transform = 'scale(0)';
+    blue.style.transform = 'scale(0)';
+    yellow.style.transform = 'scale(0)';
+    red.style.transform = 'scale(1)';
+    	console.log('hiii')
+	}else {
 	// display
     green.style.transform = 'scale(1)';
     blue.style.transform = 'scale(0)';
     yellow.style.transform = 'scale(0)';
     setTimeout(function(){
     	red.style.transform = 'scale(0)';
-    },1000)
-
+    },700)
+	}
 };
 
 
@@ -380,13 +401,27 @@ function moveyellowgoti(){
 	if (pny > 24) {
 		pny = 23;
 	};
+	//winning function for red;
+	if (pny == 24) {
+		setTimeout(function(){
+			container.style.display = "none";
+			yelloww.style.height = '100vh';
+		},2000);
+	}
+	if (yellowinput.value == 4) {
+    green.style.transform = 'scale(0)';
+    blue.style.transform = 'scale(0)';
+    yellow.style.transform = 'scale(1)';
+    	red.style.transform = 'scale(0)';
+	}else {
 	// display
     blue.style.transform = 'scale(1)';
     green.style.transform = 'scale(0)';
     red.style.transform = 'scale(0)';
     setTimeout(function(){
     	yellow.style.transform = 'scale(0)';
-    },1000)
+    },500)
+	}
 };
 
 
@@ -552,13 +587,26 @@ function movebluegoti(){
 	if (pnb > 24) {
 		pnb = 23;
 	};
+	//winning function for red;
+	if (pnb == 24) {
+		setTimeout(function(){
+			container.style.display = "none";
+			bluew.style.height = '100vh';
+		},2000);
+	}
+	if (blueinput.value == 4) {
+    green.style.transform = 'scale(0)';
+    blue.style.transform = 'scale(1)';
+    yellow.style.transform = 'scale(0)';
+    	red.style.transform = 'scale(0)';
+	}else {
 	// display
     red.style.transform = 'scale(1)';
     green.style.transform = 'scale(0)';
     yellow.style.transform = 'scale(0)';
     setTimeout(function(){
     	blue.style.transform = 'scale(0)';
-    },1000)
+    },500)	}
 };
 
 
@@ -724,11 +772,91 @@ function movegreengoti(){
 	if (png > 24) {
 		png = 23;
 	};
+	//winning function for red;
+	if (png == 24) {
+		setTimeout(function(){
+			container.style.display = "none";
+		},2000);
+		greenw.style.height = '100vh';
+	}
+	if (greeninput.value == 4) {
+    green.style.transform = 'scale(1)';
+    blue.style.transform = 'scale(0)';
+    yellow.style.transform = 'scale(0)';
+    	red.style.transform = 'scale(0)';
+	}else {
 	// display
     yellow.style.transform = 'scale(1)';
     blue.style.transform = 'scale(0)';
     red.style.transform = 'scale(0)';
     setTimeout(function(){
     	green.style.transform = 'scale(0)';
-    },1000)
+    },500)
+	};
 };
+
+// append child function
+redw.addEventListener("mousemove",function(e){
+			var bubbles = document.createElement("span");
+			bubbles.setAttribute('class' , 'bubbles');
+			var x = e.offsetX;
+			var y =e.offsetY;
+			var size = Math.random() * 100;
+			bubbles.style.left = x + 'px ';
+			bubbles.style.top = y + 'px';
+			bubbles.style.width = 20 + size + 'px';
+			bubbles.style.height =20 +  size + 'px';
+			redw.appendChild(bubbles);
+
+			setTimeout(function(){
+				bubbles.remove();
+			},4000)
+	})
+greenw.addEventListener("mousemove",function(e){
+			var bubbles = document.createElement("span");
+			bubbles.setAttribute('class' , 'bubbles');
+			var x = e.offsetX;
+			var y =e.offsetY;
+			var size = Math.random() * 100;
+			bubbles.style.left = x + 'px ';
+			bubbles.style.top = y + 'px';
+			bubbles.style.width = 20 + size + 'px';
+			bubbles.style.height =20 +  size + 'px';
+			greenw.appendChild(bubbles);
+
+			setTimeout(function(){
+				bubbles.remove();
+			},4000)
+	})
+bluew.addEventListener("mousemove",function(e){
+			var bubbles = document.createElement("span");
+			bubbles.setAttribute('class' , 'bubbles');
+			var x = e.offsetX;
+			var y =e.offsetY;
+			var size = Math.random() * 100;
+			bubbles.style.left = x + 'px ';
+			bubbles.style.top = y + 'px';
+			bubbles.style.width = 20 + size + 'px';
+			bubbles.style.height =20 +  size + 'px';
+			bluew.appendChild(bubbles);
+
+			setTimeout(function(){
+				bubbles.remove();
+			},4000)
+	})
+yelloww.addEventListener("mousemove",function(e){
+			var bubbles = document.createElement("span");
+			bubbles.setAttribute('class' , 'bubbles');
+			var x = e.offsetX;
+			var y =e.offsetY;
+			var size = Math.random() * 100;
+			bubbles.style.left = x + 'px ';
+			bubbles.style.top = y + 'px';
+			bubbles.style.width = 20 + size + 'px';
+			bubbles.style.height =20 +  size + 'px';
+			yelloww.appendChild(bubbles);
+
+			setTimeout(function(){
+				bubbles.remove();
+			},4000)
+	})
